@@ -1,14 +1,14 @@
 package app;
 
-import data.Persistencia;
-import java.util.InvalidPropertiesFormatException;
-import views.IngresarNuevoVehiculo;
-//import views.ListarVehiculosView;
+import views.MenuPrincipal; // Importamos la vista
+import javax.swing.SwingUtilities;
 
 public class Program {
-    public static void main(String[] args) throws IllegalArgumentException, InvalidPropertiesFormatException {
-        Persistencia.inicializar();
-        IngresarNuevoVehiculo view = new IngresarNuevoVehiculo();
-        view.setVisible(true);
+    public static void main(String[] args) {
+        // Iniciamos el menú principal
+        SwingUtilities.invokeLater(() -> {
+            MenuPrincipal menu = new MenuPrincipal();
+            menu.setVisible(true);
+        });
     }
 }
